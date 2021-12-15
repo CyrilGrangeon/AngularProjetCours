@@ -1,1 +1,25 @@
-<p>todo works!</p>
+<main>
+    <h2>Chose à faire</h2>
+
+    <form #f="ngForm" (submit)="addToDo(f)">
+
+        <label for="title">A faire :</label>
+        <input id="title" type="text" ngModel name="title">
+
+        <label for="category">Categories</label>
+        <select id="category" ngModel name="category">
+            <option value="">---</option>
+            <option value="pro">Professionnel</option>
+            <option value="hobby">Loisir</option>
+            <option value="cleaningTask">Tache ménagère</option>
+        </select>
+
+        <label for="description">Description</label>
+        <textarea id="description" ngModel name="description" placeholder="Ecrire une description de la tache ici"></textarea>
+
+        <button type="submit">Ajouter</button>
+    </form>
+
+    <app-todo-list *ngIf="allTodos" [allTodos]="allTodos"></app-todo-list>
+
+</main>
