@@ -18,6 +18,8 @@ getTodos() {
   return this.todos;
 }
 
-
+deleteTodo(todo: Todo){
+  this.todos = this.todos.filter(item => item.id !== todo.id);
+}
 
 }

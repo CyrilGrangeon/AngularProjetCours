@@ -2,7 +2,7 @@
 
 <ul>
 
-    <li *ngFor="let todo of allTodos">{{todo | json}}</li>
-
+    <li *ngFor="let todo of allTodos"><app-todo-info [todo]="todo" (deleteTodo)="deleteTodo($event)"></app-todo-info></li>
+    
 </ul>
 
